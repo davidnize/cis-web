@@ -1,5 +1,5 @@
 import { NavLink, useMantineTheme } from "@mantine/core";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDocumentTitle, useLocalStorage } from "@mantine/hooks";
 import {
   IconArrowsMove,
@@ -28,14 +28,9 @@ export function Homepage() {
   const savedHymnal = HYMNALS_CONFIG.find(
     (hymnal) => hymnal.key === preferredHymnal,
   );
-  console.log(savedHymnal);
   
   const theme = useMantineTheme();
   const { colorMode } = useColorMode();
-
-  // if (savedHymnal) {
-  //   return <Navigate replace to={`/songs/${savedHymnal.fileName}/1`} />;
-  // }
 
   return (
     <div className={styles.container}>
